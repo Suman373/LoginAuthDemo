@@ -33,7 +33,7 @@ const Login = () => {
     // handle submit by the user
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        console.log('username is:',user,'password is',pass);
+        // console.log('username is:',user,'password is',pass);
         if(pass === basePassword){
             setSuccess(true);
             // setUser('');
