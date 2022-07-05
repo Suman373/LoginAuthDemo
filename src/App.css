@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
-}
+/* import font */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* reset */
+*,*::before, *::after{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root{
+  --accent:#2b2b85;
+  --marsh:#0e530e;
+  --titles:#d63636;
+  --vignette:#d4caca48;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  height:100vh;
+  width:100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background:#f1eded;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+/* form container */
+.form-container{
+  height:24rem;
+  width:30rem;
+  background: var(--vignette);
+  border:2px solid green;
+}
+.form-control label{
+  margin:1rem;
+  font-size:1.7rem;
+}
+.form-control input{
+  height:2.5rem;
+  font-size:1.2rem;
+  width:88%;
+  border-radius: 8px;
+  border: 2px solid black;
+  margin:1rem auto;
+  padding:5px;
+  outline:none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* errors */
+.error-msg, .no-error-msg{
+  font-size:1.4rem;
+  text-align: center;
+}
+.error-msg{
+  color:var(--titles);
+  animation:shake 300ms linear;
+}
+@keyframes shake{
+  0%,100%{
+    transform: translateX(-20px);
   }
-  to {
-    transform: rotate(360deg);
+  25%,50%{
+    transform:translateX(20px);
   }
+}
+.no-error-msg{
+  color:var(--marsh);
 }

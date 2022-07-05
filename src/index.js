@@ -1,17 +1,19 @@
+// Author : Suman Roy @github.com/Suman373 
+// Date : 4.07.2022
+// A user password auth without backend 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import AuthContext, { AuthProvider } from './context/AuthProvider';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* wrap the App with the AuthProvider -> higher order context, which helps to provide authentication to all the children components */}
+    <AuthProvider>
     <App />
+    </AuthProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
